@@ -3,6 +3,8 @@ import { deleteData } from "./adminAPI.js";
 let container = document.querySelector(".container")
 let tbody = document.querySelector(".tbody")
 let add = document.querySelector(".add")
+let creatmodal = document.querySelector(".creatmodal")
+let Closeml = document.querySelector(".Closeml")
 
 export function render (users){
 tbody.innerHTML=""
@@ -49,7 +51,11 @@ deleteData(element.id)
 }
 
 add.onclick=()=>{
-    
+creatmodal.style.display="block"
+
+Closeml.onclick=()=>{
+    creatmodal.style.display="none"
+}
 }
 });
 }
