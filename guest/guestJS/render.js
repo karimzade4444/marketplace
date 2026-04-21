@@ -17,8 +17,11 @@ function render(prods){
         bottomBL.classList.add("bottomBL")
         let title = document.createElement("p")
         title.textContent=element.title
+        title.style.color="gray"
+        title.style.fontSize="20px"
         let price = document.createElement("p")
         price.textContent=element.price+"$"
+        price.style.fontSize="20px"
         bottomBL.append(title,price)
         block.append(backimg,bottomBL)
         Products.append(block)
