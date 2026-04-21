@@ -153,3 +153,12 @@ button{
   z-index: 999;
   transition: 0.5s ease;
 }
+
+.sch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    width: 200px;
+}
