@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+}
+.full{
+    position: relative;
+    width: 100%;
+}
+.TGTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 40px 80px;
+  position: sticky;
+  top: 0;
+}
+
+.TGTLeft {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  width: 50px;
+}
+a {
+  color: black;
+}
+.industry {
+  font-family: cursive;
+  letter-spacing: 3px;
+}
+
+.TGTRight {
+  position: relative;
+}
+
+.BackCounter {
+  width: 23px;
+  height: 23px;
+  background-color: rgb(181, 118, 3);
+  border-radius: 50px;
+  position: absolute;
+  right: -8px;
+  top: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
