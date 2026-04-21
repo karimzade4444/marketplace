@@ -60,6 +60,7 @@ editForm.img.value=element.img
 editForm.title.value=element.title
 editForm.price.value=element.price
 editForm.about.value=element.about
+editForm.model.value=element.model
 editForm.id.value=element.id
 
 Closeed.onclick=()=>{

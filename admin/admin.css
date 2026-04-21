@@ -87,7 +87,7 @@ button {
   position: absolute;
   width: 30%;
   max-width: 600px;
-  height: 550px;
+  height: 600px;
   background-color: rgb(255, 247, 214);
   top: 50%;
   left: 50%;
@@ -98,7 +98,7 @@ button {
 }
 
 .crmodaltop {
-  padding: 20px 30px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
