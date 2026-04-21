@@ -14,6 +14,7 @@
   padding: 40px 80px;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .TGTLeft {
@@ -68,10 +69,60 @@ a {
 .middleLeft{
     width: 20%;
     height: 100px;
-    background-color: aqua;
+    padding-left: 80px;
+    line-height: 2;
+    color:rgb(1, 93, 93) ;
+    font-size: 20px;
 }
 .middleRight{
-    width: 77%;
+    width: 75%;
     height: 100px;
-    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.search{
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    margin-left: 20px;
+    
+}
+.search::placeholder{
+    color: rgb(2, 134, 134);
+    padding-left: 15px;
+}
+
+
+.middleLeft p{
+    cursor: pointer;
+}
+
+.block{
+    width: 300px;
+    height: 250px;
+    border: 2px solid rgba(128, 128, 128, 0.208);
+    cursor: pointer;
+}
+.backimg{
+    width: 100%;
+    height: 70%;
+    background-color: black;
+}
+
+.imgss{
+    width: 100%;
+    height: 100%;
+}
+
+.bottomBL{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
