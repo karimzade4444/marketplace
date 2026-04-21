@@ -1,9 +1,10 @@
+import getGuestData from "./mainApi.js";
 
 
 
 let middleRight = document.querySelector(".middleRight")
-
-
+let search = document.querySelector(".search")
+let pars = document.querySelectorAll(".par")
 
 export function render(users){
     middleRight.innerHTML=""
@@ -28,6 +29,17 @@ export function render(users){
         price.style.fontSize="20px"
         bottomBL.append(title,price)
         block.append(backimg,bottomBL)
-        middleRight.append(block)   
+        middleRight.append(block)  
     });
 }
+
+search.oninput = () => {
+  getGuestData({ title: search.value });
+};
+
+
+pars.forEach(el => {
+  el.onclick = () => {
+    getGuestData({ model: el.textContent });
+  };
+});
