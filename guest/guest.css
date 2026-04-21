@@ -76,3 +76,24 @@ a {
     width: 100%;
     height: 100vh;
 }
+.Products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.block{
+    width: 350px;
+    height: 350px;
+    background-color: aqua;
+    border: 2px solid rgba(128, 128, 128, 0.396);
+}
+.backimg{
+    width: 100%;
+    height: 70%;
+    background-color: black;
+}
+
+.imgss{
+    width: 100%;
+    height: 100%;
+}
