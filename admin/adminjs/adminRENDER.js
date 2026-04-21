@@ -1,4 +1,4 @@
-import { deleteData, creatData, getData } from "./adminAPI.js";
+import { deleteData, creatData, getData,editData } from "./adminAPI.js";
 
 let container = document.querySelector(".container")
 let tbody = document.querySelector(".tbody")
@@ -85,4 +85,11 @@ CreatForm.onsubmit = (event) => {
   creatData(formcrData);
   creatmodal.style.display = "none";
   CreatForm.reset();
+};
+
+editForm.onsubmit = (event) => {
+  event.preventDefault();
+  let formedData = Object.fromEntries(new FormData(editForm));
+  editData(formedData, editForm.id.value);
+  editmodal.style.display = "none";
 };
