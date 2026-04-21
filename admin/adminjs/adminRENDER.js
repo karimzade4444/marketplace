@@ -34,6 +34,9 @@ about.textContent=element.about
 let price = document.createElement("td")
 price.textContent=element.price+"$"
 price.style.width="150px"
+let model = document.createElement("td")
+model.textContent=element.model
+model.style.width="150px"
 let actions = document.createElement("td")
 let div = document.createElement("div")
 let editbtn=document.createElement("button")
@@ -49,7 +52,7 @@ div.style.justifyContent="center"
 div.style.alignItems="center"
 actions.style.width="200px"
 actions.append(div)
-tr.append(imgback,title,about,price,actions)
+tr.append(imgback,title,about,price,model,actions)
 
 editbtn.onclick=()=>{
 editmodal.style.display="block"
