@@ -28,5 +28,14 @@ export const deleteData = async (id) => {
   }
 };
 
+export const creatData = async (data) => {
+  try {
+    await axios.post(api, data);
+    getData();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 

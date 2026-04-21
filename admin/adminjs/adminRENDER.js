@@ -1,10 +1,11 @@
-import { deleteData } from "./adminAPI.js";
+import { deleteData, creatData, getData } from "./adminAPI.js";
 
 let container = document.querySelector(".container")
 let tbody = document.querySelector(".tbody")
 let add = document.querySelector(".add")
 let creatmodal = document.querySelector(".creatmodal")
 let Closeml = document.querySelector(".Closeml")
+let CreatForm = document.querySelector(".CreatForm")
 
 export function render (users){
 tbody.innerHTML=""
@@ -26,7 +27,7 @@ title.style.width="150px"
 let about=document.createElement("td")
 about.textContent=element.about
 let price = document.createElement("td")
-price.textContent=element.price
+price.textContent=element.price+"$"
 price.style.width="150px"
 let actions = document.createElement("td")
 let div = document.createElement("div")
@@ -59,3 +60,13 @@ Closeml.onclick=()=>{
 }
 });
 }
+
+
+
+CreatForm.onsubmit = (event) => {
+  event.preventDefault();
+  let formcrData = Object.fromEntries(new FormData(CreatForm));
+  creatData(formcrData);
+  creatmodal.style.display = "none";
+  CreatForm.reset();
+};
