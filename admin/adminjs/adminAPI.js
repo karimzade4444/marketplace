@@ -38,4 +38,13 @@ export const creatData = async (data) => {
 };
 
 
+export const editData = async (data, id) => {
+  try {
+    await axios.put(`${api}/${id}`, data);
+    getData();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
