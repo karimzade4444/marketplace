@@ -2,6 +2,7 @@ import { deleteData } from "./adminAPI.js";
 
 let container = document.querySelector(".container")
 let tbody = document.querySelector(".tbody")
+let add = document.querySelector(".add")
 
 export function render (users){
 tbody.innerHTML=""
@@ -45,6 +46,10 @@ tr.append(imgback,title,about,price,actions)
 
 deletebtn.onclick=()=>{
 deleteData(element.id)
+}
+
+add.onclick=()=>{
+    
 }
 });
 }

@@ -78,7 +78,7 @@ button{
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
-  display: block;
+  display: none;
   z-index: 999;
   transition: 0.5s ease;
 }
@@ -88,7 +88,7 @@ button{
   width: 30%;
   max-width: 600px;
   height: 550px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 247, 214);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -135,6 +135,6 @@ button{
 }
 
 .closesave {
-  margin-top: 50px;
-  margin-left: 40px;
+  margin-top: 20px;
+  margin-left: 50px;
 }
