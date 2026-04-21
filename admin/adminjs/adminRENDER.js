@@ -6,6 +6,10 @@ let add = document.querySelector(".add")
 let creatmodal = document.querySelector(".creatmodal")
 let Closeml = document.querySelector(".Closeml")
 let CreatForm = document.querySelector(".CreatForm")
+let Closeed = document.querySelector(".Closeed")
+let editmodal = document.querySelector(".editmodal")
+let editForm = document.querySelector(".editForm")
+
 
 export function render (users){
 tbody.innerHTML=""

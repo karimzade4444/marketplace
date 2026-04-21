@@ -56,6 +56,7 @@ td{
     border: 2px solid black;
     font-size: 20px;
     font-weight: 800;
+    background-color: white;
 }
 button{
     width: 60px;
@@ -104,7 +105,7 @@ button{
   justify-content: space-between;
   align-items: center;
 }
-.CreatForm {
+.CreatForm, .editForm {
   margin: 10px 30px;
   color: rgb(78, 78, 78);
 }
@@ -119,7 +120,7 @@ button{
   cursor: pointer;
 }
 
-.Closeml {
+.Closeml, .Closeed {
   width: 150px;
   height: 40px;
   border-radius: 15px;
@@ -137,4 +138,18 @@ button{
 .closesave {
   margin-top: 20px;
   margin-left: 50px;
+}
+
+
+.editmodal{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: block;
+  z-index: 999;
+  transition: 0.5s ease;
 }
