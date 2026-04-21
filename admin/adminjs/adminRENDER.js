@@ -50,6 +50,18 @@ actions.style.width="200px"
 actions.append(div)
 tr.append(imgback,title,about,price,actions)
 
+editbtn.onclick=()=>{
+editmodal.style.display="block"
+editForm.img.value=element.img
+editForm.title.value=element.title
+editForm.price.value=element.price
+editForm.about.value=element.about
+editForm.id.value=element.id
+
+Closeed.onclick=()=>{
+    editmodal.style.display="none"
+}
+}
 
 deletebtn.onclick=()=>{
 deleteData(element.id)
