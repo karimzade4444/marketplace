@@ -166,3 +166,11 @@ button {
 .searchIcon {
   font-size: 30px;
 }
+
+a{
+    margin: 50px 50px;
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    font-size: 25px;
+}
