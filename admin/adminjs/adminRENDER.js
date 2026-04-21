@@ -9,6 +9,7 @@ let CreatForm = document.querySelector(".CreatForm")
 let Closeed = document.querySelector(".Closeed")
 let editmodal = document.querySelector(".editmodal")
 let editForm = document.querySelector(".editForm")
+let search = document.querySelector(".search")
 
 
 export function render (users){
@@ -92,4 +93,9 @@ editForm.onsubmit = (event) => {
   let formedData = Object.fromEntries(new FormData(editForm));
   editData(formedData, editForm.id.value);
   editmodal.style.display = "none";
+};
+
+
+search.oninput = () => {
+  getData({ title: search.value });
 };
