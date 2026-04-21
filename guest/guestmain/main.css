@@ -56,3 +56,22 @@ a {
   color: rgb(3, 88, 88);
   font-size: 28px;
 }
+
+
+.middle{
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.middleLeft{
+    width: 20%;
+    height: 100px;
+    background-color: aqua;
+}
+.middleRight{
+    width: 77%;
+    height: 100px;
+    background-color: aqua;
+}
