@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 30px 50px;
+    padding: 40px 80px;
 }
 
 .TGTLeft{
@@ -31,6 +31,26 @@ a{
     color: rgb(188, 187, 187);
 }
 .industry{
-    font-family: fantasy;
+    font-family: cursive;
     letter-spacing: 3px;
+}
+
+.TGCenter{
+    color: white;
+    padding: 120px 80px;
+}
+.TPAR{
+    font-size: 100px;
+    font-family: cursive;
+}
+
+.show{
+    width: 200px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 2px solid rgb(172, 172, 172);
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 30px;
 }
