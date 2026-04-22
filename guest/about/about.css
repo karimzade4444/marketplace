@@ -51,3 +51,38 @@ a {
   align-items: center;
   z-index: 9;
 }
+
+
+.top {
+  margin: 100px 80px;
+}
+.top h3 {
+  color: rgb(3, 88, 88);
+  font-size: 28px;
+}
+
+
+.history{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.history h1{
+  color: rgb(213, 140, 5);
+  font-size: 40px;
+}
+
+.history h2{
+  font-size: 35px;
+}
+
+
+.text{
+  width: 70%;
+  margin: auto;
+  padding-top: 80px;
+  line-height: 1.8;
+  color: rgb(4, 108, 108);
+  font-size: 20px;
+}
