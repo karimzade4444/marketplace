@@ -1,45 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MARKETPLACE</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-<body>
-<div class="full">
-
-     <div class="TGTop">
+  </head>
+  <body>
+    <div class="full">
+      <div class="TGTop">
         <div class="TGTLeft">
-          <a href="/guest/guest.html">HOME</a><a href="main.html">PRODUCTS</a><a href="/guest/about/about.html">ABOUT</a>
+          <a href="/guest/guest.html">HOME</a><a href="main.html">PRODUCTS</a
+          ><a href="/guest/about/about.html">ABOUT</a>
         </div>
         <h1 class="industry">KARIMZADE</h1>
         <div class="TGTRight">
-            <div class="BackCounter"><p class="cartCount" style="color: white;">0</p></div>
-          <img src="/guest/img/Vector.png" alt="" style="width: 40px; cursor: pointer; filter: brightness(0); "  />
+          <div class="BackCounter">
+            <p class="cartCount" style="color: white">0</p>
+          </div>
+          <img
+            src="/guest/img/Vector.png"
+            alt=""
+            style="width: 40px; cursor: pointer; filter: brightness(0)"
+          />
         </div>
       </div>
 
       <div class="top"><h3>Home / Products</h3></div>
-     <div class="middle">
+      <div class="middle">
         <div class="middleLeft">
-            <input type="search" name="" id="" class="search" placeholder="Search...">
-            <p class="par" style="padding-top: 30px;" >Bosch</p>
-            <p class="par">Adidas</p>
-            <p class="par">Jordan</p>
-            <p class="par">LaCite</p>
-            <p class="par">Rufallo</p>
-            <div class="cost">
-                <p style="font-weight: 900; padding-top: 30px;">Price</p>
-                <input type="range" name="" id="priceRange" min="0" max="10000" value="500">
-                <p>Value: $ <span id="priceValue">500</span></p>
-            </div>
+          <input
+            type="search"
+            name=""
+            id=""
+            class="search"
+            placeholder="Search..."
+          />
+          <p class="par" style="padding-top: 30px">Bosch</p>
+          <p class="par">Adidas</p>
+          <p class="par">Jordan</p>
+          <p class="par">LaCite</p>
+          <p class="par">Rufallo</p>
+          <div class="cost">
+            <p style="font-weight: 900; padding-top: 30px">Price</p>
+            <input
+              type="range"
+              name=""
+              id="priceRange"
+              min="0"
+              max="10000"
+              value="500"
+            />
+            <p>Value: $ <span id="priceValue">500</span></p>
+          </div>
         </div>
         <div class="middleRight"></div>
-     </div>
-</div>
+      </div>
+    </div>
 
-<script src="mainJS/mainG.js" type="module"></script>
-</body>
+    <div class="backmodal">
+      <div class="modal">
+        <div style="padding-top: 20px; padding-left: 20px; font-size: 30px; cursor: pointer;">❌</div>
+        <h1 style="text-align: center; font-family: cursive;">Your bag</h1>
+        <div class="prods"></div>
+      </div>
+    </div>
+
+    <script src="mainJS/mainG.js" type="module"></script>
+  </body>
 </html>

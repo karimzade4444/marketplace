@@ -58,71 +58,95 @@ a {
   font-size: 28px;
 }
 
-
-.middle{
-    width: 100%;
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
+.middle {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.middleLeft{
-    width: 20%;
-    height: 100px;
-    padding-left: 80px;
-    line-height: 2;
-    color:rgb(1, 93, 93) ;
-    font-size: 20px;
+.middleLeft {
+  width: 20%;
+  height: 100px;
+  padding-left: 80px;
+  line-height: 2;
+  color: rgb(1, 93, 93);
+  font-size: 20px;
 }
-.middleRight{
-    width: 75%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.middleRight {
+  width: 75%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.search{
-    width: 150px;
-    height: 40px;
-    border-radius: 15px;
-    margin-left: 20px;
-    
+.search {
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  margin-left: 20px;
 }
-.search::placeholder{
-    color: rgb(2, 134, 134);
-    padding-left: 15px;
+.search::placeholder {
+  color: rgb(2, 134, 134);
+  padding-left: 15px;
+}
+
+.par {
+  cursor: pointer;
+}
+
+.block {
+  width: 300px;
+  height: 250px;
+  border: 2px solid rgba(128, 128, 128, 0.208);
+  cursor: pointer;
+}
+.backimg {
+  width: 100%;
+  height: 70%;
+  background-color: black;
+}
+
+.imgss {
+  width: 100%;
+  height: 100%;
+}
+
+.bottomBL {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 
-.par{
-    cursor: pointer;
+
+.backmodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: block;
+  z-index: 999;
+  transition: 0.5s ease;
 }
 
-.block{
-    width: 300px;
-    height: 250px;
-    border: 2px solid rgba(128, 128, 128, 0.208);
-    cursor: pointer;
-}
-.backimg{
-    width: 100%;
-    height: 70%;
-    background-color: black;
-}
+.modal {
+  position: absolute;
+  width: 30%;
+  max-width: 600px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  right: 0;
 
-.imgss{
-    width: 100%;
-    height: 100%;
-}
-
-.bottomBL{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  border: 2px solid black;
+  padding-bottom: 20px;
 }
