@@ -137,6 +137,7 @@ a {
     line-height: 1.8;
     color: rgb(6, 67, 147);
     padding-top: 30px;
+    height: 120px;
 }
 
 
@@ -144,6 +145,10 @@ a {
     width: 200px;
     height: 40px;
     margin-top: 40px;
+    background-color: orange;
+    color: white;
+    border: 1px solid gray;
+    cursor: pointer;
 }
 
 
