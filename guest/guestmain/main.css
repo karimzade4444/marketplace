@@ -202,3 +202,24 @@ a {
   font-size: 20px;
   padding-top: 7px;
 }
+
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  font-size: 30px;
+  
+}
+
+.check{
+  width: 90%;
+  margin-left: 5%;
+  height: 40px;
+  background-color: rgb(203, 132, 1);
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
