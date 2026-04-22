@@ -31,7 +31,7 @@ export function render(users){
         block.append(backimg,bottomBL)
         middleRight.append(block)  
         block.onclick=()=>{
-          window.location.href="/BlockScreen/blocksc.html"
+          window.location.href=`/BlockScreen/blocksc.html?id=${element.id}`
         }
     });
 }

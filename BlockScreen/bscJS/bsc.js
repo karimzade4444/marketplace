@@ -15,7 +15,30 @@ const getGuestData = async (params) => {
 
 
 let namePR = document.querySelector('.namePR')
+let img = document.querySelector(".img")
+let title =document.querySelector(".title")
+let model =document.querySelector(".model")
+let price = document.querySelector(".price") 
+let about = document.querySelector(".about")
+let bottom = document.querySelector(".bottom")
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 
-function render (){
-    
+
+
+function render(element) {
+  namePR.textContent = element.title;
+  img.src = element.img;
+  title.textContent = element.title;
+  model.textContent = element.model;
+  price.textContent = "$"+element.price;
+  about.textContent = element.about;
 }
+
+
+
+async function getOneProduct() {
+  const res = await axios.get(`${api}/${id}`);
+  render(res.data);
+}
+getOneProduct();
