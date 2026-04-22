@@ -42,3 +42,19 @@ async function getOneProduct() {
   render(res.data);
 }
 getOneProduct();
+
+
+let cartCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
+
+let counter = document.querySelector(".cartCount");
+counter.textContent = cartCount;
+
+let buyBtn = document.querySelector(".buy");
+
+buyBtn.onclick = () => {
+  cartCount++; // +1
+
+  localStorage.setItem("cartCount", JSON.stringify(cartCount));
+
+  counter.textContent = cartCount;
+};
