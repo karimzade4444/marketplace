@@ -55,6 +55,9 @@ a {
 
 .top {
   margin: 100px 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .top h3 {
   color: rgb(3, 88, 88);
