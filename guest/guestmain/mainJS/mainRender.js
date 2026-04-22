@@ -30,6 +30,9 @@ export function render(users){
         bottomBL.append(title,price)
         block.append(backimg,bottomBL)
         middleRight.append(block)  
+        block.onclick=()=>{
+          window.location.href="/BlockScreen/blocksc.html"
+        }
     });
 }
 
