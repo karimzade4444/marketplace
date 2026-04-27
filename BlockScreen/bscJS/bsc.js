@@ -86,10 +86,9 @@ function renderCart() {
   tovar.innerHTML = "";
 
   cart.forEach((el) => {
-    let div = document.createElement("div");
-    div.className = "tovar";
+   
 
-    div.innerHTML = `
+    tovar.innerHTML = `
       <div class="leftT">
         <img src="${el.img}" width="100%">
       </div>

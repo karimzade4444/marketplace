@@ -193,8 +193,8 @@ a {
   height: 90px;
   display: flex;
   justify-content: space-between;
-  
   margin-top: 10px;
+  border: 2px solid gray;
 }
 
 .leftT{
