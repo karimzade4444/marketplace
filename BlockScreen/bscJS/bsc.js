@@ -55,10 +55,9 @@ async function getOneProduct() {
 }
 getOneProduct();
 
-let cartCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
 
-let counter = document.querySelector(".cartCount");
-counter.textContent = cartCount;
+
+
 
 let buyBtn = document.querySelector(".buy");
 
@@ -107,7 +106,9 @@ function renderCart() {
     tovar.appendChild(div);
   });
 }
-
+let cartCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
+let counter = document.querySelector(".cartCount");
+counter.textContent = cartCount;
 buyBtn.onclick = () => {
   cartCount++;
   localStorage.setItem("cartCount", JSON.stringify(cartCount));
