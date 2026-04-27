@@ -31,6 +31,7 @@ let tovar = document.querySelector(".tovar")
 let leftT = document.querySelector(".leftT")
 let titleM = document.querySelector(".titleM")
 let priceM = document.querySelector(".priceM")
+let ccount = document.querySelector(".ccount")
 
 let cart =[]
 
@@ -101,5 +102,12 @@ imgL.src=el.img
 leftT.append(imgL)
 titleM.textContent=el.title
 priceM.textContent=el.price
+ccount.textContent=el.count
 })
+}
+
+
+
+buyBtn.onclick=()=>{
+  addToCart(response.data)
 }
