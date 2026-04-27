@@ -23,6 +23,14 @@ let about = document.querySelector(".about")
 let bottom = document.querySelector(".bottom")
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+let TGTRight = document.querySelector(".TGTRight")
+let backmodal = document.querySelector(".backmodal")
+
+
+let tovar = document.querySelector(".tovar")
+let leftT = document.querySelector(".leftT")
+
+let cart =[]
 
 
 
@@ -58,3 +66,34 @@ buyBtn.onclick = () => {
 
   counter.textContent = cartCount;
 };
+
+
+
+
+
+
+TGTRight.onclick=()=>{
+backmodal.style.display="block"
+}
+
+
+function addToCart(prod){
+  let is = cart.find(el=>el.id===prod.id);
+  if(is){
+    is.count+=1;
+  }
+  else{
+    cart.push({
+      ...prod,
+      count:1
+    })
+  }
+  renderCart()
+}
+
+function renderCart(){
+tovar.innerHTML=""
+cart.forEach(el=>{
+
+})
+}
