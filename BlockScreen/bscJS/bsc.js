@@ -1,5 +1,4 @@
-
- let api = "https://69e5ff70ce4e908a155ec5a1.mockapi.io/mmj";
+let api = "https://69e5ff70ce4e908a155ec5a1.mockapi.io/mmj";
 const getGuestData = async (params) => {
   try {
     const response = await axios.get(api, {
@@ -11,49 +10,50 @@ const getGuestData = async (params) => {
     container.innerHTML = "404";
   }
 };
+let currentProduct = "";
 
+async function getOneProduct() {
+  const res = await axios.get(`${api}/${id}`);
+  currentProduct = res.data; // 👈 сохраняем
+  render(res.data);
+}
 
-
-let namePR = document.querySelector('.namePR')
-let img = document.querySelector(".img")
-let title =document.querySelector(".title")
-let model =document.querySelector(".model")
-let price = document.querySelector(".price") 
-let about = document.querySelector(".about")
-let bottom = document.querySelector(".bottom")
+let namePR = document.querySelector(".namePR");
+let img = document.querySelector(".img");
+let title = document.querySelector(".title");
+let model = document.querySelector(".model");
+let price = document.querySelector(".price");
+let about = document.querySelector(".about");
+let bottom = document.querySelector(".bottom");
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-let TGTRight = document.querySelector(".TGTRight")
-let backmodal = document.querySelector(".backmodal")
+let TGTRight = document.querySelector(".TGTRight");
+let backmodal = document.querySelector(".backmodal");
 
+let tovar = document.querySelector(".tovar");
+let leftT = document.querySelector(".leftT");
+let titleM = document.querySelector(".titleM");
+let priceM = document.querySelector(".priceM");
+let ccount = document.querySelector(".ccount");
+let close = document.querySelector(".close")
 
-let tovar = document.querySelector(".tovar")
-let leftT = document.querySelector(".leftT")
-let titleM = document.querySelector(".titleM")
-let priceM = document.querySelector(".priceM")
-let ccount = document.querySelector(".ccount")
-
-let cart =[]
-
-
+let cart = [];
 
 function render(element) {
   namePR.textContent = element.title;
   img.src = element.img;
   title.textContent = element.title;
   model.textContent = element.model;
-  price.textContent = "$"+element.price;
+  price.textContent = "$" + element.price;
   about.textContent = element.about;
 }
 
-
-
 async function getOneProduct() {
   const res = await axios.get(`${api}/${id}`);
+  currentProduct=res.data
   render(res.data);
 }
 getOneProduct();
-
 
 let cartCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
 
@@ -62,52 +62,57 @@ counter.textContent = cartCount;
 
 let buyBtn = document.querySelector(".buy");
 
-buyBtn.onclick = () => {
-  cartCount++; // +1
-
-  localStorage.setItem("cartCount", JSON.stringify(cartCount));
-
-  counter.textContent = cartCount;
+TGTRight.onclick = () => {
+  backmodal.style.display = "block";
+  close.onclick=()=>{
+    backmodal.style.display = "none";
+  }
 };
 
-
-
-
-
-
-TGTRight.onclick=()=>{
-backmodal.style.display="block"
-}
-
-
-function addToCart(prod){
-  let is = cart.find(el=>el.id===prod.id);
-  if(is){
-    is.count+=1;
-  }
-  else{
+function addToCart(prod) {
+  let is = cart.find((el) => el.id === prod.id);
+  if (is) {
+    is.count += 1;
+  } else {
     cart.push({
       ...prod,
-      count:1
-    })
+      count: 1,
+    });
   }
-  renderCart()
+  renderCart();
 }
 
-function renderCart(){
-tovar.innerHTML=""
-cart.forEach(el=>{
-let imgL = document.createElement("img")
-imgL.src=el.img
-leftT.append(imgL)
-titleM.textContent=el.title
-priceM.textContent=el.price
-ccount.textContent=el.count
-})
+function renderCart() {
+  tovar.innerHTML = "";
+
+  cart.forEach((el) => {
+    let div = document.createElement("div");
+    div.className = "tovar";
+
+    div.innerHTML = `
+      <div class="leftT">
+        <img src="${el.img}" width="100%">
+      </div>
+      <div class="middleT">
+        <p class="titleM">${el.title}</p>
+        <p class="priceM">$${el.price}</p>
+        <div class="how">
+          <div>+</div>
+          <p>${el.count}</p>
+          <div>-</div>
+        </div>
+      </div>
+      <div class="rightT">✖️</div>
+    `;
+
+    tovar.appendChild(div);
+  });
 }
 
+buyBtn.onclick = () => {
+  cartCount++;
+  localStorage.setItem("cartCount", JSON.stringify(cartCount));
+  counter.textContent = cartCount;
 
-
-buyBtn.onclick=()=>{
-  addToCart(response.data)
-}
+  addToCart(currentProduct);
+};
