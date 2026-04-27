@@ -35,7 +35,7 @@ let leftT = document.querySelector(".leftT");
 let titleM = document.querySelector(".titleM");
 let priceM = document.querySelector(".priceM");
 let ccount = document.querySelector(".ccount");
-let close = document.querySelector(".close")
+let close = document.querySelector(".close");
 
 let cart = [];
 
@@ -50,22 +50,18 @@ function render(element) {
 
 async function getOneProduct() {
   const res = await axios.get(`${api}/${id}`);
-  currentProduct=res.data
+  currentProduct = res.data;
   render(res.data);
 }
 getOneProduct();
-
-
-
-
 
 let buyBtn = document.querySelector(".buy");
 
 TGTRight.onclick = () => {
   backmodal.style.display = "block";
-  close.onclick=()=>{
+  close.onclick = () => {
     backmodal.style.display = "none";
-  }
+  };
 };
 
 function addToCart(prod) {
@@ -85,8 +81,6 @@ function renderCart() {
   tovar.innerHTML = "";
 
   cart.forEach((el) => {
-   
-
     tovar.innerHTML = `
       <div class="leftT">
         <img src="${el.img}" width="100%">
