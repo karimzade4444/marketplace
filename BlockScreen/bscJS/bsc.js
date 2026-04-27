@@ -94,6 +94,9 @@ function addToCart(prod){
 function renderCart(){
 tovar.innerHTML=""
 cart.forEach(el=>{
+let imgL = document.createElement("img")
+imgL.src=el.img
+leftT.append(imgL)
 
 })
 }
