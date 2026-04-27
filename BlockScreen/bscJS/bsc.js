@@ -29,6 +29,8 @@ let backmodal = document.querySelector(".backmodal")
 
 let tovar = document.querySelector(".tovar")
 let leftT = document.querySelector(".leftT")
+let titleM = document.querySelector(".titleM")
+let priceM = document.querySelector(".priceM")
 
 let cart =[]
 
@@ -97,6 +99,7 @@ cart.forEach(el=>{
 let imgL = document.createElement("img")
 imgL.src=el.img
 leftT.append(imgL)
-
+titleM.textContent=el.title
+priceM.textContent=el.price
 })
 }
