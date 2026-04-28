@@ -10,7 +10,7 @@ const getGuestData = async (params) => {
     container.innerHTML = "404";
   }
 };
-let currentProduct = "";
+let currentProduct = null;
 
 async function getOneProduct() {
   const res = await axios.get(`${api}/${id}`);
