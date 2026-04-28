@@ -83,7 +83,7 @@ function renderCart() {
   cart.forEach((el) => {
     tovar.innerHTML = `
       <div class="leftT">
-        <img src="${el.img}" width="100%">
+        <img src="${el.img}" width="100%", height="100%">
       </div>
       <div class="middleT">
         <p class="titleM">${el.title}</p>
