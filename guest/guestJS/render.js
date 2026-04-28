@@ -25,7 +25,11 @@ function render(prods){
         bottomBL.append(title,price)
         block.append(backimg,bottomBL)
         Products.append(block)
+        block.onclick=()=>{
+          window.location.href=`/BlockScreen/blocksc.html?id=${element.id}`
+        }
     });
+     
 }
 
 export default render
