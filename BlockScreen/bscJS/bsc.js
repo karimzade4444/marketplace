@@ -36,6 +36,7 @@ let titleM = document.querySelector(".titleM");
 let priceM = document.querySelector(".priceM");
 let ccount = document.querySelector(".ccount");
 let close = document.querySelector(".close");
+let totalprice=document.querySelector(".totalprice")
 
 let cart = [];
 
@@ -95,7 +96,9 @@ function renderCart() {
         </div>
       </div>
       <div class="rightT">✖️</div>
-    `;
+    `
+    totalprice.textContent="$"+el.price*el.count;
+    ;
 
     tovar.appendChild(div);
   });
