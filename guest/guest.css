@@ -94,6 +94,7 @@ a {
     width: 350px;
     height: 350px;
     border: 2px solid rgba(128, 128, 128, 0.208);
+    cursor: pointer;
 }
 .backimg{
     width: 100%;
