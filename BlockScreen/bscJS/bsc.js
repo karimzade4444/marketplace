@@ -84,8 +84,9 @@ function addToCart(prod) {
 
 function renderCart() {
 tovar.innerHTML=""
+let total = 0;
   cart.forEach((el) => {
-    tovar.innerHTML = `
+    tovar.innerHTML += `
       <div class="leftT">
         <img src="${el.img}" width="100%", height="100%">
       </div>
@@ -100,10 +101,12 @@ tovar.innerHTML=""
       </div>
       <div class="rightT">✖️</div>
     `
-    totalprice.textContent="$"+el.price*el.count;
+    total +=el.price*el.count 
+  
     ;
 
       });
+      totalprice.textContent="$"+total
 }
 
 function updateCounter() {
