@@ -87,6 +87,7 @@ tovar.innerHTML=""
 let total = 0;
   cart.forEach((el) => {
     tovar.innerHTML += `
+    <div class="itemss">
       <div class="leftT">
         <img src="${el.img}" width="100%", height="100%">
       </div>
@@ -100,6 +101,7 @@ let total = 0;
         </div>
       </div>
       <div class="rightT">✖️</div>
+      </div>
     `
     total +=el.price*el.count 
   
