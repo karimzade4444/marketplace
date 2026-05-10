@@ -83,32 +83,36 @@ function addToCart(prod) {
 }
 
 function renderCart() {
-tovar.innerHTML=""
-let total = 0;
+  tovar.innerHTML = "";
+  let total = 0;
+
   cart.forEach((el) => {
     tovar.innerHTML += `
-    <div class="itemss">
-      <div class="leftT">
-        <img src="${el.img}" width="100%", height="100%">
-      </div>
-      <div class="middleT">
-        <p class="titleM">${el.title}</p>
-        <p class="priceM">$${el.price}</p>
-        <div class="how">
-          <div>+</div>
-          <p>${el.count}</p>
-          <div>-</div>
+      <div class="itemss" data-id="${el.id}">
+        
+        <div class="leftT">
+          <img src="${el.img}" width="100%" height="100%">
         </div>
-      </div>
-      <div class="rightT">✖️</div>
-      </div>
-    `
-    total +=el.price*el.count 
-  
-    ;
 
-      });
-      totalprice.textContent="$"+total
+        <div class="middleT">
+          <p class="titleM">${el.title}</p>
+          <p class="priceM">$${el.price}</p>
+
+          <div class="how">
+            <div class="minus">-</div>
+            <p class="count">${el.count}</p>
+            <div class="plus">+</div>
+          </div>
+        </div>
+
+        <div class="rightT delete">✖️</div>
+      </div>
+    `;
+
+    total += el.price * el.count;
+  });
+
+  totalprice.textContent = "$" + total;
 }
 
 function updateCounter() {
