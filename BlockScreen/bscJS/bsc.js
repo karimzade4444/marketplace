@@ -79,7 +79,6 @@ function addToCart(prod) {
 }
 
 function renderCart() {
-  tovar.innerHTML = "";
 
   cart.forEach((el) => {
     tovar.innerHTML = `
