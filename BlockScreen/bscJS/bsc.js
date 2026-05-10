@@ -1,20 +1,8 @@
 let api = "https://69e5ff70ce4e908a155ec5a1.mockapi.io/mmj";
-const getGuestData = async (params) => {
-  try {
-    const response = await axios.get(api, {
-      params,
-    });
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    container.innerHTML = "404";
-  }
-};
-let currentProduct = null;
 
 async function getOneProduct() {
   const res = await axios.get(`${api}/${id}`);
-  currentProduct = res.data; // 👈 сохраняем
+  currentProduct = res.data;
   render(res.data);
 }
 
@@ -36,7 +24,7 @@ let titleM = document.querySelector(".titleM");
 let priceM = document.querySelector(".priceM");
 let ccount = document.querySelector(".ccount");
 let close = document.querySelector(".close");
-let totalprice=document.querySelector(".totalprice")
+let totalprice = document.querySelector(".totalprice");
 let counter = document.querySelector(".cartCount");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -48,6 +36,9 @@ function render(element) {
   model.textContent = element.model;
   price.textContent = "$" + element.price;
   about.textContent = element.about;
+  buyBtn.onclick = () => {
+    addToCart(element);
+  };
 }
 
 async function getOneProduct() {
@@ -88,28 +79,43 @@ function renderCart() {
   let total = 0;
 
   cart.forEach((el) => {
-    tovar.innerHTML += `
-      <div class="itemss" data-id="${el.id}">
-        
-        <div class="leftT">
-          <img src="${el.img}" width="100%" height="100%">
-        </div>
+    let div = document.createElement("div");
+    div.classList.add("itemss");
+    let leftT = document.createElement("div");
+    leftT.classList.add("leftT");
+    let img = document.createElement("img");
+    img.classList.add("img");
+    img.src = el.img;
+    img.style.width = "100%";
+    img.style.height = "100%";
+    leftT.append(img);
+    let middleT = document.createElement("div");
+    let titleM = document.createElement("p");
+    titleM.classList.add("titleM");
+    titleM.textContent = el.title;
+    let priceM = document.createElement("p");
+    priceM.classList.add("priceM");
+    priceM.textContent = "$" + el.price;
+    let how = document.createElement("div");
+    how.classList.add("how");
+    let minus = document.createElement("div");
+    minus.classList.add("minus");
+    minus.textContent = "-";
+    let count = document.createElement("p");
+    count.classList.add("count");
+    count.textContent = el.count;
+    let plus = document.createElement("div");
+    plus.classList.add("plus");
+    plus.textContent = "+";
+    plus.onclick = () => {};
+    how.append(minus, count, plus);
+    middleT.append(titleM, priceM, how);
 
-        <div class="middleT">
-          <p class="titleM">${el.title}</p>
-          <p class="priceM">$${el.price}</p>
-
-          <div class="how">
-            <div class="minus">-</div>
-            <p class="count">${el.count}</p>
-            <div class="plus">+</div>
-          </div>
-        </div>
-
-        <div class="rightT delete">✖️</div>
-      </div>
-    `;
-
+    let rightT = document.createElement("div");
+    rightT.classList.add("rightT");
+    rightT.textContent = "✖️";
+    div.append(leftT, middleT, rightT);
+    tovar.append(div);
     total += el.price * el.count;
   });
 
@@ -117,49 +123,9 @@ function renderCart() {
 }
 
 function updateCounter() {
-  let totalCount = cart.reduce((sum, el) => sum + el.count, 0);
+  let totalCount = cart.length;
   counter.textContent = totalCount;
 }
 
-
-
-
-buyBtn.onclick = () => {
-  addToCart(currentProduct);
-};
-
-
 renderCart();
 updateCounter();
-
-
-tovar.addEventListener("click", (e) => {
-  let item = e.target.closest(".itemss");
-  if (!item) return;
-
-  let id = String(item.dataset.id);
-
-  let product = cart.find(el => String(el.id) === id);
-  if (!product) return;
-
-  if (e.target.classList.contains("plus")) {
-    product.count++;
-  }
-
-  if (e.target.classList.contains("minus")) {
-    product.count--;
-
-    if (product.count <= 0) {
-      cart = cart.filter(el => String(el.id) !== id);
-    }
-  }
-
-  if (e.target.classList.contains("delete")) {
-    cart = cart.filter(el => String(el.id) !== id);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  renderCart();
-  updateCounter();
-});
