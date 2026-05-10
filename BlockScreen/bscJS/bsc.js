@@ -38,7 +38,7 @@ let ccount = document.querySelector(".ccount");
 let close = document.querySelector(".close");
 let totalprice=document.querySelector(".totalprice")
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function render(element) {
   namePR.textContent = element.title;
@@ -67,6 +67,7 @@ TGTRight.onclick = () => {
 
 function addToCart(prod) {
   let is = cart.find((el) => el.id === prod.id);
+
   if (is) {
     is.count += 1;
   } else {
@@ -75,11 +76,14 @@ function addToCart(prod) {
       count: 1,
     });
   }
+
+  localStorage.setItem("cart", JSON.stringify(cart)); // сохранить
+  updateCounter(); // обновить счетчик
   renderCart();
 }
 
 function renderCart() {
-
+tovar.innerHTML=""
   cart.forEach((el) => {
     tovar.innerHTML = `
       <div class="leftT">
@@ -101,12 +105,21 @@ function renderCart() {
 
       });
 }
-let cartCount = 0;
-let counter = document.querySelector(".cartCount");
-counter.textContent = cartCount;
-buyBtn.onclick = () => {
-  cartCount++;
-  counter.textContent = cartCount;
 
+function updateCounter() {
+  let totalCount = cart.reduce((sum, el) => sum + el.count, 0);
+  counter.textContent = totalCount;
+}
+
+
+let counter = document.querySelector(".cartCount");
+
+buyBtn.onclick = () => {
   addToCart(currentProduct);
 };
+
+
+renderCart();
+updateCounter();
+
+
