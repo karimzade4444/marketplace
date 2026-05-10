@@ -99,8 +99,7 @@ function renderCart() {
     totalprice.textContent="$"+el.price*el.count;
     ;
 
-    tovar.appendChild(div);
-  });
+      });
 }
 let cartCount = 0;
 let counter = document.querySelector(".cartCount");
