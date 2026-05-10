@@ -37,6 +37,7 @@ let priceM = document.querySelector(".priceM");
 let ccount = document.querySelector(".ccount");
 let close = document.querySelector(".close");
 let totalprice=document.querySelector(".totalprice")
+let counter = document.querySelector(".cartCount");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -121,7 +122,7 @@ function updateCounter() {
 }
 
 
-let counter = document.querySelector(".cartCount");
+
 
 buyBtn.onclick = () => {
   addToCart(currentProduct);
@@ -132,3 +133,33 @@ renderCart();
 updateCounter();
 
 
+tovar.addEventListener("click", (e) => {
+  let item = e.target.closest(".itemss");
+  if (!item) return;
+
+  let id = String(item.dataset.id);
+
+  let product = cart.find(el => String(el.id) === id);
+  if (!product) return;
+
+  if (e.target.classList.contains("plus")) {
+    product.count++;
+  }
+
+  if (e.target.classList.contains("minus")) {
+    product.count--;
+
+    if (product.count <= 0) {
+      cart = cart.filter(el => String(el.id) !== id);
+    }
+  }
+
+  if (e.target.classList.contains("delete")) {
+    cart = cart.filter(el => String(el.id) !== id);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  renderCart();
+  updateCounter();
+});
